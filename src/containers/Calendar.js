@@ -1,8 +1,8 @@
 import React from 'react'
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
-import reactdatepicker from '../styles/datepicker.css'
-import reactdatepickercssmodules from '../styles/reactdatepickercssmodules.css'
+import '../styles/datepicker.css'
+import '../styles/reactdatepickercssmodules.css'
 
 class Calendar extends React.Component {
   constructor (props) {
@@ -15,8 +15,9 @@ class Calendar extends React.Component {
   handleChange = (date) => {
     this.setState({
       startDate: date
+    }, () => {
+      this.props.getBookingDate(this.state.startDate._d)
     })
-    this.props.getBookingDate(this.state.startDate._d)
   }
 
   render() {

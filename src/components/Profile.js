@@ -8,7 +8,6 @@ import ReservationsList from '../containers/ReservationsList'
 class Profile extends React.Component {
 
   componentDidMount = () => {
-    //fetch all info about a user whenever the profile page loads - need this for favs and rezzies
     const user = this.props.user
     this.props.fetchProfileData(user)
   }
@@ -16,9 +15,9 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <h2>Hey there, {this.props.user.username}!</h2><br/>
-        <FavoritesList/><br/>
+        <h1>Hey there, {this.props.user.username}!</h1>
         <ReservationsList/><br/>
+        <FavoritesList/><br/>
       </div>
     )
   }

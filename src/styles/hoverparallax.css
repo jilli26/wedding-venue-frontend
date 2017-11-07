@@ -16,6 +16,7 @@ h1{
   margin: 2rem 0;
 }
 
+
 .wrapper{
   width: 90%;
   margin: 0 auto;
@@ -40,7 +41,7 @@ h1{
 }
 
 .container{
-  /*background-image: url('https://i.imgur.com/ioooeVy.jpg');*/
+  /*background-image: url('https://i.imgur.com/ioooeVy.jpg'); ;*/
   background-color: #EAFAF1;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -64,11 +65,12 @@ h1{
 	height: auto;
 	border-radius: 10px;
 	color: black;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 }
 
 .back{
   background: #EAFAF1;
+  /*#EAFAF1*/
   /*background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
   background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
   background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);*/
@@ -152,11 +154,13 @@ h1{
 }
 
 .front .inner p{
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   position: relative;
   /*changed this*/
   color: black;
+  text-align: center;
+
 }
 
 .front .inner p:after{

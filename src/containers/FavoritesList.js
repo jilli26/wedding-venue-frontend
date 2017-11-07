@@ -19,7 +19,7 @@ class FavoritesList extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { favorites: state.usersReducer.favorites.favoritedVenueData }
+  return { favorites: state.usersReducer.favorites }
 }
 
 export default connect(mapStateToProps)(FavoritesList)

@@ -1,5 +1,3 @@
-import { chain } from 'redux-chain'
-
 export function loginUser(username, password) {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/login', {
@@ -34,43 +32,44 @@ export function fetchProfileData(user) {
     })
       .then(res => res.json())
       .then(profileData => dispatch({ type: 'FETCH_PROFILE_DATA', profileData }))
-      .then(payload => dispatch( chain(getFavIds(payload)), (getRezIds(payload)) ) )
-      // take payload and dispatch to another action method here called getRezIds
-      // .then(payload => dispatch(getRezIds(payload)))
-
+      // .then(profileData =>
+      //   dispatch({ type: 'FETCH_PROFILE_DATA', profileData }))
+      // .then(payload => dispatch(chain(
+      //   // getRezIds(payload),
+      //   getFavIds(payload)
+      // )))
   }
 }
 
-export function getFavIds(payload) {
-  const favorites = payload.profileData.favorites
-  console.log(favorites);
-  return (dispatch) => {
-    fetch('http://localhost:3000/api/v1/user_favs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({favorites: favorites})
-    })
-    .then(res => res.json())
-    .then(userFavedVenues => dispatch({ type: 'FETCH_FAV_VENUE_DATA', userFavedVenues }))
-  }
-}
+// export function getFavIds(payload) {
+//   const favorites = payload.profileData.favorites
+//   return (dispatch) => {
+//     fetch('http://localhost:3000/api/v1/user_favs', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json'
+//       },
+//       body: JSON.stringify({favorites: favorites})
+//     })
+//     .then(res => res.json())
+//     .then(userFavedVenues => dispatch({ type: 'FETCH_FAV_VENUE_DATA', userFavedVenues }))
+//   }
+// }
 
-export function getRezIds(payload) {
-  const reservations = payload.profileData
-  console.log(reservations);
-  // return (dispatch) => {
-  //   fetch('http://localhost:3000/api/v1/user_favs', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json'
-  //     },
-  //     body: JSON.stringify({favorites: favorites})
-  //   })
-  //   .then(res => res.json())
-  //   .then(userFavedVenues => dispatch({ type: 'FETCH_FAV_VENUE_DATA', userFavedVenues }))
-  // }
-}
+// export function getRezIds(payload) {
+//   const reservations = payload.profileData.reservations
+//   return (dispatch) => {
+//
+//     fetch('http://localhost:3000/api/v1/user_reservations', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json'
+//       },
+//       body: JSON.stringify({reservations: reservations})
+//     })
+//     .then(res => res.json())
+//     .then(userReservations => dispatch({ type: 'FETCH_RESERVATION_DATA', userReservations: userReservations }))
+//   }
+// }
