@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Calendar from './Calendar'
 import { setBookingDate } from '../actions/reservation'
+import CancellationModal from '../components/CancellationModal'
 
 class Reservation extends React.Component {
 
@@ -54,11 +55,15 @@ class Reservation extends React.Component {
 
     return (
       <div>
-        <h3>{this.props.venue.title}</h3>
-        <h4>{this.props.venue.location}</h4>
+        <h3>{this.props.venue.title ? this.props.venue.title : null}</h3>
+        <h4>{this.props.venue.location ? this.props.venue.location : null}</h4>
         <h4>{spelledOutDate}</h4><br/>
-        <button className='button' onClick={this.handleDelete}>Delete</button>
-        <Calendar getBookingDate={this.getBookingDate}/><button className='button' onClick={this.handleBookingEdit}>Edit Reservation </button>
+        <center>
+        <p>Modify your reservation?</p><Calendar getBookingDate={this.getBookingDate}/><button className='button' onClick={this.handleBookingEdit}>Edit</button><br/><br/>
+        <p>Cancel your reservation?</p>
+        {/* <button className='button' onClick={this.handleDelete}>Cancel</button> */}
+        </center>
+        <CancellationModal handleDelete={this.handleDelete}/>
       </div>
     )
   }

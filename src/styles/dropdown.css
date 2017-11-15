@@ -1,0 +1,13 @@
+.category-selector {
+  width: 35%;
+  float: left;
+  /*display: inline;*/
+  margin-left: 10%;
+}
+
+.capacity-selector {
+  width: 35%;
+  float: right;
+  /*display: inline;*/
+  margin-right: 10%;
+}

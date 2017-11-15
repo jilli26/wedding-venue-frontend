@@ -13,3 +13,23 @@
   text-align: center;
   font-size: 1.5em;
 }
+
+.searchBar {
+  z-index: 10;
+  position: fixed;
+  width: 500px;
+  margin-left: 150px;
+  margin-top: 10px;
+  float: right;
+}
+
+.hitched {
+  text-align: center;
+  font-size: 5em;
+  font-family: 'La Belle Aurore';
+  z-index: 2;
+  position: relative;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');

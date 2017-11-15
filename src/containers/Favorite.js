@@ -30,8 +30,8 @@ class Favorite extends React.Component {
       <div>
       <br/><h3>{this.props.venue.title}</h3>
         <h4>{this.props.venue.location}</h4>
-        <h4>Favorited on {spelledOutDate}</h4><br/>
-        <button className='button' onClick={this.handleFavoriteDelete}>Delete</button>
+        <h4>Favorited on {spelledOutDate}</h4>
+        <center><button className='button' onClick={this.handleFavoriteDelete}>Delete</button></center>
       </div>
     )
   }

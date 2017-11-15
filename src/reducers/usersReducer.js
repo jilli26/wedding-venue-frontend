@@ -7,10 +7,11 @@ export default function usersReducer(state = {
 
   switch (action.type) {
 
-    // case "SET_CURRENT_USER":
-    //   localStorage.setItem('jwt', action.payload.jwt)
-    //   console.log({...state, username: action.payload.username, id: action.payload.id});
-    //   return {...state, username: action.payload.username, id: action.payload.id}
+    case "SET_CURRENT_USER":
+      // localStorage.setItem('jwt', action.payload.jwt)
+      console.log(action.payload);
+      // console.log({...state, username: action.payload.username, id: action.payload.id});
+      return {...state, username: action.payload.username, id: action.payload.id}
 
     case 'FETCH_PROFILE_DATA':
       // console.log(action.profileData.reservations);
@@ -70,7 +71,8 @@ export default function usersReducer(state = {
 
       return Object.assign({}, state, { reservations: state.reservations })
 
-
+    // case "SET_SEARCH_LOCATION":
+      // console.log(latlng)
 
     default:
       return state

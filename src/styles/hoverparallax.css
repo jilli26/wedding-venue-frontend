@@ -85,7 +85,7 @@ h1{
     height: 100%;
     content: '';
     display: block;
-    opacity: .6;
+    opacity: 0.6;
     background-color: #000;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
@@ -93,6 +93,7 @@ h1{
 }
 .container:hover .front,
 .container:hover .back{
+    /*transition: opacity 1s ease-in, visibility .75s linear;*/
     -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
     transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
     -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -180,7 +181,7 @@ h1{
 .front .inner span{
   color: black;
   /*rgba(255,255,255,0.7);*/
-  font-family: 'Rozha One', serif;
+  font-family: 'Nunito', serif;
   font-weight: 300;
 }
 

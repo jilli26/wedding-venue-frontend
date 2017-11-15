@@ -13,7 +13,7 @@ export function makeReservation(userId, venueId, date) {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify({ userId, venueId, date })
+      body: JSON.stringify({reservation: { user_id: userId, venue_id: venueId, start: date }} )
     })
     .then(res => res.json())
     .then(reservation => dispatch({ type: 'MAKE_RESERVATION', reservation: reservation }))

@@ -10,10 +10,12 @@ import usersReducer from './reducers/usersReducer'
 import venuesReducer from './reducers/venuesReducer'
 import favoritesReducer from './reducers/favoritesReducer'
 import reservationsReducer from './reducers/reservationsReducer'
+import searchesReducer from './reducers/searchesReducer'
 import thunk from 'redux-thunk';
 import { chainMiddleware } from 'redux-chain';
+import 'semantic-ui-css/semantic.min.css';
 
-const rootReducer = combineReducers({ usersReducer, venuesReducer, favoritesReducer, reservationsReducer })
+const rootReducer = combineReducers({ usersReducer, venuesReducer, favoritesReducer, reservationsReducer, searchesReducer })
 
 
 
