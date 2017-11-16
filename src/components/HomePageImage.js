@@ -3,7 +3,7 @@ import '../styles/homepageimage.css'
 
 const HomePageImage = () => {
   return (
-    <img src="https://i.imgur.com/yaOH69N.jpg" alt="Wedding" title="source: imgur.com" className="roundedsplit" id='homePageImage' />
+    <img src="https://i.imgur.com/ZPUS7Xy.jpg" alt="Wedding" title="source: imgur.com" className="roundedsplit" id='homePageImage' />
   )
 }
 
