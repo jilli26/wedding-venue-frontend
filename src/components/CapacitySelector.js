@@ -35,7 +35,7 @@ class CapacitySelector extends React.Component {
     }, () => {
       var capacity = this.state.capacity
       var location = this.props.location
-    
+
       // console.log(e.value)
       this.props.selectCapacity(capacity, location)
     })
@@ -59,7 +59,7 @@ class CapacitySelector extends React.Component {
 
     return (
       <div className="capacity-selector">
-      <h3>How many guests will you have?</h3>
+      <h3>NUMBER OF GUESTS</h3>
         <Select
           name="form-field-name"
           value={this.state.capacity}

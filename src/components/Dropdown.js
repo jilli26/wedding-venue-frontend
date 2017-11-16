@@ -65,7 +65,7 @@ class Dropdown extends React.Component {
 
     return (
       <div className="category-selector">
-        <h3>What types of places would you like to get married?</h3>
+        <h3>VENUE CATEGORIES</h3>
         <Select
           name="form-field-name"
           value={this.state.categories}
