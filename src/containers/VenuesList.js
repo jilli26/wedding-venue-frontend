@@ -26,7 +26,7 @@ class VenuesList extends React.Component {
 
       <div>
         <br/><br/><br/>
-        {/* <img src="https://i.imgur.com/41Zf04d.png" alt="hitched-logo"/> */}
+        <img src="https://i.imgur.com/41Zf04d.png" alt="hitched-logo"/>
         <div className="dropdown">
           {this.props.venues.length === 1 || this.props.showMap === false ? null : <div><Dropdown/><CapacitySelector/><br/><br/></div>}
         </div>

@@ -8,10 +8,10 @@ class SiteDescription extends React.Component {
       <div>
         <center>
           <br/>
-          <h1>WHAT'S HITCHED?</h1>
+          <h1>WHAT IS HITCHED?</h1>
           <br/>
         </center>
-        <Grid columns={3}>
+        <Grid columns={4}>
           <Grid.Column>
             <center><img src='https://i.imgur.com/evNrlli.png'/></center>
             <h3> NO WORRIES </h3>
@@ -23,9 +23,14 @@ class SiteDescription extends React.Component {
             <p>Hitched is a digital platform connecting wedding venue seekers and those with picturesque places to rent out. With spaces from castles and gardens to wineries and hotels, we're the one-stop shop for all your wedding venue needs. </p>
           </Grid.Column>
           <Grid.Column>
+            <center><img src='https://i.imgur.com/cPClrXs.png'/></center>
+            <h3> RENT YOUR SPACES </h3>
+            <p>Manage an art gallery? Have your own restaurant? Earn some extra dollars by listing your space for couples' special days.</p>
+          </Grid.Column>
+          <Grid.Column>
             <center><img src='https://i.imgur.com/jS2LSVQ.png'/></center>
             <h3> LOCAL AND GLOBAL </h3>
-            <p>Find spots for your you haven't yet heard of yet -- locally, and globally.</p>
+            <p>Find spots to tie the knot that you haven't yet heard of yet -- locally, and globally.</p>
           </Grid.Column>
         </Grid>
       </div>

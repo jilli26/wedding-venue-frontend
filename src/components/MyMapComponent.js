@@ -15,24 +15,25 @@ const AnyReactComponent = ({ text }) => (
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 let divStyle = {
-  border: '1px solid black',
+  border: '2px solid black',
   minWidth: "400px",
   // minHeight: "600px",
-  backgroundColor: 'white',
+  backgroundColor: '#EAFAF1',
   color: 'black',
   fontSize: 11,
   padding: 2,
   cursor: 'pointer',
-  borderRadius: '10%'
+  fontWeight: 'bold'
+  // borderRadius: '10%'
 }
 
 const InfoBox = (props) => (
   <div style={divStyle}>
-  <p><b>{props.venue.title}</b></p>
-  <p><b>Category:</b> {props.venue.category}</p>
-  <p><b>Capacity:</b> {props.venue.capacity}</p>
-  <p><b>Pricing:</b> {props.venue.pricing}</p>
-  <p><b>Size:</b> {props.venue.size}</p>
+  <h4>{props.venue.title}</h4>
+  <p>Category: {props.venue.category}</p>
+  <p>Capacity: {props.venue.capacity} guests max</p>
+  <p>Pricing: {props.venue.pricing}</p>
+  <p>Size: {props.venue.size} sq. ft.</p>
   <img src={props.venue.photo} alt="venue" width="350" position="bottom"/>
   </div>
 

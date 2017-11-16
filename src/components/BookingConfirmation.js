@@ -18,6 +18,18 @@ class BookingConfirmation extends Component {
   render() {
     const { open, dimmer } = this.state
     const cancelMessage = "A quick reminder about the venue's cancellation policy: "
+
+    var options = {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    };
+
+    const date = this.props.date
+    const newDate = new Date(date)
+
+    const finalDate = newDate.toLocaleTimeString("en-us", options)
+
+    const spelledOutDate = (finalDate.split(' ').slice(0,4).toString()).replace(/[, ]+/g, " ").trim()
+
     // debugger
     return (
       <div>
@@ -30,10 +42,12 @@ class BookingConfirmation extends Component {
           <Modal.Content image>
             <Image wrapped size='medium' src='/assets/images/avatar/large/rachel.png' />
             <Modal.Description>
-              <Header>{this.props.title}</Header>
-              <p>{this.props.city}, {this.props.state}</p>
-              <p>{this.props.date.toString()}</p>
-              <p>{this.props.cancellationPolicy ? this.props.cancellationPolicy : null}</p>
+              <center>
+              <h2>{this.props.title}</h2>
+              <h3>{this.props.city}, {this.props.state}</h3>
+              <h3>{spelledOutDate}</h3>
+              <h3>{this.props.cancellationPolicy ? this.props.cancellationPolicy : null}</h3>
+              </center>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
