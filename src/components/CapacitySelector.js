@@ -34,8 +34,10 @@ class CapacitySelector extends React.Component {
       capacity: value
     }, () => {
       var capacity = this.state.capacity
+      var location = this.props.location
+    
       // console.log(e.value)
-      this.props.selectCapacity(capacity)
+      this.props.selectCapacity(capacity, location)
     })
   }
 
@@ -57,7 +59,7 @@ class CapacitySelector extends React.Component {
 
     return (
       <div className="capacity-selector">
-      <h3>Capacity</h3>
+      <h3>How many guests will you have?</h3>
         <Select
           name="form-field-name"
           value={this.state.capacity}
@@ -77,14 +79,14 @@ class CapacitySelector extends React.Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     location: state.searchesReducer.stateLocation
-//   }
-// }
+function mapStateToProps(state) {
+  return {
+    location: state.searchesReducer.stateLocation
+  }
+}
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ selectCapacity }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(CapacitySelector)
+export default connect(mapStateToProps, mapDispatchToProps)(CapacitySelector)

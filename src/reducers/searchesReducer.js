@@ -1,5 +1,10 @@
 export default function searchesReducer(state = {latlng: '', stateLocation: '', showMap: false, selectedVenues: [], selectedCapacities: [], finalSelection: [] }, action) {
   switch (action.type) {
+
+    case 'CLEAR_SEARCH_RESULTS':
+    console.log(action.payload);
+    return {...state, finalSelection: action.payload}
+
     case "SET_SEARCH_LOCATION":
       // console.log(latlng)
       return {...state, latlng: action.payload, showMap: state.showMap, selectedVenues: state.selectedVenues, selectedCapacities: state.selectedCapacities, finalSelection: state.finalSelection}
@@ -9,7 +14,7 @@ export default function searchesReducer(state = {latlng: '', stateLocation: '', 
     let test
     let str = action.payload
     let regexp = /\b[A-Z]{2}\b/;
-    regexp.test(str) ? test = (str.match(regexp)) : null
+    regexp.test(str) ? test = (str.match(regexp)) : test = str
 
       return {...state, stateLocation: test, showMap: state.showMap, selectedVenues: state.selectedVenues, selectedCapacities: state.selectedCapacities, finalSelection: state.finalSelection}
 
@@ -23,7 +28,7 @@ export default function searchesReducer(state = {latlng: '', stateLocation: '', 
       var selectedVenues = action.payload.selected_venues // categories => []
       var selectedCapacities = state.selectedCapacities // capacities =>
       let match
-      if (selectedCapacities === null || selectedCapacities.length === 0 || selectedCapacities === undefined) {
+      if (selectedCapacities.length === 0 || selectedCapacities === null || selectedCapacities === undefined) {
         match = selectedVenues
       } else if (selectedVenues.length === 0 ) {
         match = selectedCapacities

@@ -1,3 +1,10 @@
+export function clearSearchResults() {
+  return {
+    type: 'CLEAR_SEARCH_RESULTS',
+    payload: []
+  }
+}
+
 export function setSearchLocation(latlng) {
   return {
     type: 'SET_SEARCH_LOCATION',
@@ -34,7 +41,7 @@ export function selectCategory(categories, location) {
   }
 }
 
-export function selectCapacity(capacity) {
+export function selectCapacity(capacity, location) {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/venues/capacity`, {
       method: 'POST',
@@ -42,7 +49,7 @@ export function selectCapacity(capacity) {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify({ capacity })
+      body: JSON.stringify({ capacity, location })
     })
     .then(res => res.json())
     // .then(venueData => console.log(venueData))

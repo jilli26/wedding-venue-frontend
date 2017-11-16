@@ -29,6 +29,7 @@ let divStyle = {
 const InfoBox = (props) => (
   <div style={divStyle}>
   <p><b>{props.venue.title}</b></p>
+  <p><b>Category:</b> {props.venue.category}</p>
   <p><b>Capacity:</b> {props.venue.capacity}</p>
   <p><b>Pricing:</b> {props.venue.pricing}</p>
   <p><b>Size:</b> {props.venue.size}</p>

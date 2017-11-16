@@ -49,8 +49,12 @@ class Dropdown extends React.Component {
       { value: 'hotel', label: 'Hotel'},
       { value: 'historic', label: 'Historic'},
       { value: 'castle', label: 'Castle'},
-      { value: 'clubhouse', label: 'Clubhouse'},
-      { value: 'winery', label: 'Winery'}
+      { value: 'clubhouse', label: 'Country Club'},
+      { value: 'winery', label: 'Winery'},
+      { value: 'art gallery', label: 'Art Gallery'},
+      { value: 'museum', label: 'Museum'},
+      { value: 'restaurant', label: 'Restaurant'},
+      { value: 'bookstore', label: 'Bookstore'},
     ];
 
     // const test = crazy ? WHY_WOULD_YOU : options;
@@ -61,7 +65,7 @@ class Dropdown extends React.Component {
 
     return (
       <div className="category-selector">
-        <h3>Venue Categories</h3>
+        <h3>What types of places would you like to get married?</h3>
         <Select
           name="form-field-name"
           value={this.state.categories}

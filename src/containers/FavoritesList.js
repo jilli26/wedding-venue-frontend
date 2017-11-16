@@ -12,7 +12,11 @@ class FavoritesList extends React.Component {
     return (
       <div>
         <h2>Your Favorites</h2>
-        {favList}
+        <div className="wrapper">
+          <div className="cols">
+            {favList}
+          </div>
+        </div>
       </div>
     )
   }

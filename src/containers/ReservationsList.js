@@ -12,9 +12,14 @@ class ReservationsList extends React.Component {
 
     return (
       <div>
-        <h2>Your Reservations</h2><br/>
+      <h2>Your Reservations</h2><br/>
+      <div className="wrapper">
+        <div className="cols">
+
         {reservationList}
       </div>
+    </div>
+    </div>
     )
   }
 }

@@ -24,3 +24,7 @@ export function showVenue(id) {
       })
   }
 }
+
+// export function getVenueInfo() {
+//   return fetch('http://localhost:3000/api/v1/venues/')
+// }

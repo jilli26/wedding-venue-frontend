@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { toggleShowMap } from '../actions/search'
 import { bindActionCreators } from 'redux'
 import { addLocation } from '../actions/search'
+import { Button } from 'semantic-ui-react'
 
 class SimpleForm extends React.Component {
 
@@ -42,7 +43,10 @@ class SimpleForm extends React.Component {
 
     return (
       <form className="button" onSubmit={this.handleSubmitSearchForm}>
-            <PlacesAutocomplete inputProps={inputProps} /><button>Submit</button>
+        <div>
+            <PlacesAutocomplete style={{marginTop: '0em', fontFamily: 'Nunito'}} inputProps={inputProps} /><br/>
+            <Button fluid size="big" style={{marginTop: '0em', backgroundColor: '#FFF9C4'}}>Search</Button>
+          </div>
        </form>
     )
   }

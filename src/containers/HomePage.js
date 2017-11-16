@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import { Route, withRouter, NavLink, Switch, Redirect } from 'react-router-dom'
-import Profile from './components/Profile'
-import LoginForm from './components/LoginForm'
-import VenuesList from './containers/VenuesList'
-import Venue from './containers/Venue'
-import './styles/navbar.css'
+import Profile from '../components/Profile'
+import LoginForm from '../components/LoginForm'
+import VenuesList from '../containers/VenuesList'
+import Venue from '../containers/Venue'
+import '../styles/navbar.css'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { fetchVenues } from './actions/venue.js'
-import { setSearchLocation } from './actions/search.js'
-import './index.css'
+import { fetchVenues } from '../actions/venue.js'
+import { setSearchLocation } from '../actions/search.js'
+import '../index.css'
 import 'react-dates/initialize';
-import './styles/hoverparallax.css'
-import SimpleForm from './components/SimpleForm'
-import HomePageImage from './components/HomePageImage'
-import SiteDescription from './components/SiteDescription'
+import '../styles/hoverparallax.css'
+import SimpleForm from '../components/SimpleForm'
+import HomePageImage from '../components/HomePageImage'
+import SiteDescription from '../components/SiteDescription'
 import { Image } from 'semantic-ui-react'
-import HomePage from './containers/HomePage'
-import { clearSearchResults } from './actions/search'
 
 // import SimpleMap from './components/MyMapComponent'
 // import PlacesAutoCompleteForm from './components/PlacesAutoCompleteForm'
 
-class App extends Component {
+class HomePage extends Component {
 
   state = {
     redirect: false
@@ -41,7 +39,6 @@ class App extends Component {
 
   handleFetch = () => {
     this.props.fetchVenues()
-    this.props.clearSearchResults()
     // this.setState({
     //   username: localStorage.getItem('username')
     // })
@@ -67,15 +64,28 @@ class App extends Component {
           </div>
         </div>
         <div className="App">
-        <Switch>
-          <Route exact path='/venues/:id' component={Venue} />
-          <Route exact path='/profile' component={Profile}/>
-          <Route exact path='/searchresults' component={VenuesList}/>
-          <Route exact path='/signup' />
-          <Route exact path='/login' component={LoginForm}/>
-          <Route exact path='/list'/>
-          <Route exact path='/' component={HomePage}/>
-        </Switch>
+          <br/><br/>
+          <div className="searchBar">
+            <img src='https://i.imgur.com/QJoFwDb.png' alt='hitched-logo'/>
+            <SimpleForm searchLocation={this.searchLocation}/>
+          </div>
+        </div>
+        <div>
+          <HomePageImage/>
+          <center><br/>
+          <div className='main-margins'>
+            <SiteDescription/><br/><br/>
+            <Image.Group size='large'>
+              <Image src='https://i.imgur.com/pPweSqT.jpg'/>
+              <Image src='https://i.imgur.com/EvsJYgO.jpg' />
+              <Image src='https://i.imgur.com/fVEyuPK.jpg'/>
+              <Image src='https://i.imgur.com/pfzsXUH.jpg' />
+              <Image src='https://i.imgur.com/d9cODFg.jpg' />
+              <Image src='https://i.imgur.com/NOx11qS.jpg' />
+            </Image.Group>
+
+          </div>
+          </center>
       </div>
       </div>
     );
@@ -92,7 +102,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchVenues, setSearchLocation, clearSearchResults }, dispatch)
+  return bindActionCreators({ fetchVenues, setSearchLocation }, dispatch)
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomePage))

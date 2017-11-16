@@ -11,7 +11,8 @@
     left: 0;
     width: 100%; /* Full width */
     height: 60px;
-    z-index: 1
+    z-index: 2;
+    background-color: #EAFAF1
 }
 
 /* Links inside the navbar */
