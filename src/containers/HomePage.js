@@ -18,9 +18,6 @@ import HomePageImage from '../components/HomePageImage'
 import SiteDescription from '../components/SiteDescription'
 import { Image } from 'semantic-ui-react'
 
-// import SimpleMap from './components/MyMapComponent'
-// import PlacesAutoCompleteForm from './components/PlacesAutoCompleteForm'
-
 class HomePage extends Component {
 
   state = {
@@ -51,7 +48,7 @@ class HomePage extends Component {
     if (redirect) {
       return <Redirect to='/searchresults'/>;
     }
-    // debugger
+
     return (
       <div>
         <div className="navbar">
@@ -75,7 +72,7 @@ class HomePage extends Component {
           <center><br/>
           <div className='main-margins'>
             <SiteDescription/><br/><br/>
-            <Image.Group size='large'>
+            <Image.Group size='medium'>
               <Image src='https://i.imgur.com/pPweSqT.jpg'/>
               <Image src='https://i.imgur.com/EvsJYgO.jpg' />
               <Image src='https://i.imgur.com/fVEyuPK.jpg'/>
@@ -95,7 +92,6 @@ class HomePage extends Component {
 function mapStateToProps(state){
   return {
     ...state.venuesReducer,
-    // ...state.usersReducer
     username: 'jilli26',
     latlng: state.searchesReducer.latlng
   }

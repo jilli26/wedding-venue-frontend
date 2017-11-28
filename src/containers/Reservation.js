@@ -1,5 +1,4 @@
 import React from 'react'
-// import '../index.css'
 import { deleteReservation } from '../actions/reservation'
 import { editReservation } from '../actions/reservation'
 import { bindActionCreators } from 'redux'
@@ -7,7 +6,6 @@ import { connect } from 'react-redux'
 import Calendar from './Calendar'
 import { setBookingDate } from '../actions/reservation'
 import CancellationModal from '../components/CancellationModal'
-// import '../styles/profilehoverparallax.css'
 import { Link } from 'react-router-dom'
 import '../styles/profile.css'
 import { Button } from 'semantic-ui-react'
@@ -15,10 +13,6 @@ import { showVenue } from '../actions/venue'
 import { withRouter } from 'react-router-dom'
 
 class Reservation extends React.Component {
-
-  // state = {
-  //   date: ''
-  // }
 
   handleDelete = (e) => {
     e.preventDefault()
@@ -28,20 +22,13 @@ class Reservation extends React.Component {
   }
 
   getBookingDate = (date) => {
-    // this.setState({
-    //   date
-    // })
     this.props.setBookingDate(date)
   }
 
   handleBookingEdit = (e) => {
     e.preventDefault()
-    // const userId = this.props.userId
-    // const venueId = this.props.id
-    // const date = this.state.date
     const reservationId = this.props.id
     const newDate = this.props.date
-    console.log(newDate);
     this.props.editReservation(reservationId, newDate)
   }
 
@@ -53,12 +40,8 @@ class Reservation extends React.Component {
   }
 
   render() {
-    console.log(this.props.reservationDate);
-    // const date = this.props.start
     const date = this.props.reservationDate
     const newDate = new Date(date)
-
-    // debugger
 
     var options = {
     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
@@ -69,32 +52,6 @@ class Reservation extends React.Component {
     const spelledOutDate = (finalDate.split(' ').slice(0,4).toString()).replace(/[, ]+/g, " ").trim()
 
     return (
-  // <div className="wrapper">
-  //   <div className="cols">
-
-      // <div className="col" ontouchstart="this.classList.toggle('hover')">
-      //   <Link to={`venues/${this.props.venueId}`}>
-      //   <div className="container" onClick={this.handleVenueClick}>
-      //     <div className="front" >
-      //       <div className="inner" >
-      //         <p>{this.props.venue.title ? this.props.venue.title : null}</p>
-      //         <span>{this.props.venue.city ? this.props.venue.city : null}, {this.props.venue.state}</span>
-      //         <p>{spelledOutDate}</p><br/>
-      //       </div>
-      //     </div>
-      //     <div className="back" >
-      //       <div className="inner" >
-      //         <p>Modify your reservation?</p><Calendar getBookingDate={this.getBookingDate}/><button className='button' onClick={this.handleBookingEdit}>Edit</button><br/><br/>
-      //         <p>Cancel your reservation?</p>
-      //         {/* <button className='button' onClick={this.handleDelete}>Cancel</button> */}
-      //         <CancellationModal handleDelete={this.handleDelete}/>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </Link>
-      // </div>
-  // <div className="wrapper">
-  //   <div className="cols">
       <div className="col" ontouchstart="this.classList.toggle('hover')">
       <div className="reservation">
         <Link to={`venues/${this.props.venueId}`} onClick={this.handleShowVenue}><h3>{this.props.venue.title ? this.props.venue.title : null}</h3></Link>
@@ -106,9 +63,6 @@ class Reservation extends React.Component {
         <CancellationModal handleDelete={this.handleDelete}/>
       </div>
       </div>
-
-  //   </div>
-  // </div>
     )
   }
 }

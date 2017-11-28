@@ -17,9 +17,9 @@
 .searchBar {
   z-index: 1;
   position: absolute;
-  width: 500px;
-  left: 400px;
-  top: 300px;
+  width: 30%;
+  left: 15%;
+  top: 20%;
   /*float: right;*/
 }
 

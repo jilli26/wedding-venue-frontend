@@ -6,9 +6,7 @@ import { addFavorite } from '../actions/favorite'
 import Calendar from './Calendar'
 import { makeReservation } from '../actions/reservation'
 import { setBookingDate } from '../actions/reservation'
-// import 'react-icons/lib/ti/heart';
 import '../styles/venue.css'
-// import BookingButton from '../components/LargeButton'
 import { Button } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 import BookingConfirmation from '../components/BookingConfirmation'
@@ -25,9 +23,7 @@ class Venue extends React.Component {
 
   componentWillMount = () => {
     if (!this.props.venue) {
-      //dispatch an action to the backend to find the venue in our current params
       const id = this.props.match.params.id
-      // debugger
       this.props.showVenue(id)
     }
   }
@@ -42,27 +38,18 @@ class Venue extends React.Component {
   }
 
   getBookingDate = (date) => {
-    // this.setState({
-    //   date
-    // })
     this.props.setBookingDate(date)
   }
 
   handleBooking = (id) => {
-
     const userId = this.props.userId
     const venueId = id
     const date = this.props.date
-
-    console.log(venueId);
-    //get the booking date from the store instead
     this.props.makeReservation(userId, venueId, date)
     this.props.history.push('/profile')
-
   }
 
   render() {
-    // debugger
     const { contextRef } = this.state
 
     return (
