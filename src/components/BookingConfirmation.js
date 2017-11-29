@@ -30,7 +30,6 @@ class BookingConfirmation extends Component {
 
     const spelledOutDate = (finalDate.split(' ').slice(0,4).toString()).replace(/[, ]+/g, " ").trim()
 
-    // debugger
     return (
       <div>
 

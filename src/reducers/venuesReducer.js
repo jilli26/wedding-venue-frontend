@@ -5,7 +5,6 @@ export default function venuesReducer(state = {loading: false, venues: []}, acti
     case "FETCH_VENUES":
       return {loading: false, venues: action.venueData}
     case 'SHOW_VENUE':
-      // debugger
       return {loading: false, venues: [action.singleVenueData]}
     default:
       return state

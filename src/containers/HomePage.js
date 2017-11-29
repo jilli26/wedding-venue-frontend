@@ -52,7 +52,6 @@ class HomePage extends Component {
     return (
       <div>
         <div className="navbar">
-          {/* <div><img src='https://i.imgur.com/41Zf04d.png' height='90px' width='120px'/></div> */}
           <div>
             <NavLink to='/signup' activeClassName="active">Log Out</NavLink>
             {/* <NavLink to='/login' activeClassName="active">Log In</NavLink> */}

@@ -4,27 +4,18 @@ import { connect } from 'react-redux'
 import 'react-icons/lib/ti/pin';
 
 const AnyReactComponent = ({ text }) => (
-
-  // const handleVenueClick = () =>  {
-  //   console.log('clicked')
-  // }
-
   <i className="material-icons" >place</i>
 );
-
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 let divStyle = {
   border: '2px solid black',
   minWidth: "400px",
-  // minHeight: "600px",
   backgroundColor: '#EAFAF1',
   color: 'black',
   fontSize: 11,
   padding: 2,
   cursor: 'pointer',
   fontWeight: 'bold'
-  // borderRadius: '10%'
 }
 
 const InfoBox = (props) => (
@@ -36,7 +27,6 @@ const InfoBox = (props) => (
   <p>Size: {props.venue.size} sq. ft.</p>
   <img src={props.venue.photo} alt="venue" width="350" position="bottom"/>
   </div>
-
 );
 
 class SimpleMap extends React.Component {
@@ -51,14 +41,6 @@ class SimpleMap extends React.Component {
       infoBox: false,
       venue: ""
     }
-  }
-
-  componentDidMount(){
-    // fetch('http://localhost:3000/pets')
-    //   .then(res => res.json())
-    //   .then(res => this.setState({
-    //     allPets: res
-    //   }))
   }
 
   static defaultProps = {
@@ -82,7 +64,6 @@ class SimpleMap extends React.Component {
   }
 
   render() {
-    // debugger
     return (
        <GoogleMapReact
         center={{lat: this.props.lat, lng: this.props.lng}}

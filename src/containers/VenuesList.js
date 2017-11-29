@@ -31,10 +31,6 @@ class VenuesList extends React.Component {
           {this.props.venues.length === 1 || this.props.showMap === false ? null : <div><Dropdown/><CapacitySelector/><br/><br/></div>}
         </div>
 
-        {/* <div className="dropdown">
-          {this.props.showMap === false ? null : <div><h3>Capacity</h3><CapacitySelector/></div>}
-        </div> */}
-
       <div className="wrapper">
         <div className="cols">
           {this.props.venues.length === 1 ? <Venue {...this.props.venues[0]}/> : null}
@@ -43,10 +39,7 @@ class VenuesList extends React.Component {
 
       <center>
         <div style={{width: '60vw', height: '60vh'}}>
-
         {this.props.showMap === false ? null : <SimpleMap />}
-        {/* {this.props.venues.length === 1 ? null : null} */}
-
       </div>
       </center>
     </div>

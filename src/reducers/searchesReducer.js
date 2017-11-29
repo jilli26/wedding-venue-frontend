@@ -6,7 +6,6 @@ export default function searchesReducer(state = {latlng: '', stateLocation: '', 
     return {...state, finalSelection: action.payload}
 
     case "SET_SEARCH_LOCATION":
-      // console.log(latlng)
       return {...state, latlng: action.payload, showMap: state.showMap, selectedVenues: state.selectedVenues, selectedCapacities: state.selectedCapacities, finalSelection: state.finalSelection}
 
     case "ADD_LOCATION":

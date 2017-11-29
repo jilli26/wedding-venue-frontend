@@ -20,9 +20,6 @@ import { Image } from 'semantic-ui-react'
 import HomePage from './containers/HomePage'
 import { clearSearchResults } from './actions/search'
 
-// import SimpleMap from './components/MyMapComponent'
-// import PlacesAutoCompleteForm from './components/PlacesAutoCompleteForm'
-
 class App extends Component {
 
   state = {
@@ -54,7 +51,7 @@ class App extends Component {
     if (redirect) {
       return <Redirect to='/searchresults'/>;
     }
-    // debugger
+
     return (
       <div>
         <div className="navbar">
@@ -85,7 +82,6 @@ class App extends Component {
 function mapStateToProps(state){
   return {
     ...state.venuesReducer,
-    // ...state.usersReducer
     username: 'jilli26',
     latlng: state.searchesReducer.latlng
   }

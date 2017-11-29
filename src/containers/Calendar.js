@@ -29,6 +29,3 @@ class Calendar extends React.Component {
 }
 
 export default Calendar
-
-//use this to change date format to Tuesday, November 21, 2017 12:48 pm
-//this.state.startDate.format('LLLL') - need to get rid of time digits

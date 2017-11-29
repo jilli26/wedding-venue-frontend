@@ -52,7 +52,6 @@ export function selectCapacity(capacity, location) {
       body: JSON.stringify({ capacity, location })
     })
     .then(res => res.json())
-    // .then(venueData => console.log(venueData))
     .then(venueData => dispatch({ type: 'SELECT_CAPACITY', payload: venueData}))
   }
 }

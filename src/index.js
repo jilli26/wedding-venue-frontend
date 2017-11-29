@@ -1,4 +1,3 @@
-// import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -16,8 +15,6 @@ import { chainMiddleware } from 'redux-chain';
 import 'semantic-ui-css/semantic.min.css';
 
 const rootReducer = combineReducers({ usersReducer, venuesReducer, favoritesReducer, reservationsReducer, searchesReducer })
-
-
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(chainMiddleware, thunk)))
 

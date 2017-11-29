@@ -12,7 +12,6 @@ class SimpleForm extends React.Component {
     super(props)
     this.state = { address: '' }
     this.onChange = (address) => {this.setState({ address })
-      //dispatch an action to set the state to whatever the state is
     this.handleSubmitSearchForm = this.handleSubmitSearchForm.bind(this)
   }
 }
@@ -20,15 +19,13 @@ class SimpleForm extends React.Component {
   handleSubmitSearchForm = (event) => {
   event.preventDefault()
   this.props.addLocation(this.state.address)
-  //need to dispatch an action to toggle showMap to true
+
   let toggleValue
   this.props.latLng === "" ? toggleValue = false : toggleValue = true
   this.props.toggleShowMap(toggleValue)
-  // this.props.fetchSearchResults()
 
   geocodeByAddress(this.state.address)
     .then(results => getLatLng(results[0]))
-    // .then(latLng => console.logstate(latLng))
     .then(latLng => this.props.searchLocation(latLng))
     .catch(error => console.error('Error', error))
 }

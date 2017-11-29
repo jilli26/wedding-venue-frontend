@@ -2,8 +2,6 @@ import React from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { setCurrentUser } from '../actions/user'
-import '../styles/login.css'
-
 
 class LoginForm extends React.Component {
 

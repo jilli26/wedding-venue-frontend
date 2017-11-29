@@ -1,5 +1,4 @@
 import React from 'react'
-// import '../index.css'
 import { deleteFavorite } from '../actions/favorite'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -40,21 +39,14 @@ class Favorite extends React.Component {
     const spelledOutDate = (finalDate.split(' ').slice(0,4).toString()).replace(/[, ]+/g, " ").trim()
 
     return (
-      // <div className="wrapper">
-      //   <div className="cols">
-          <div className="col" ontouchstart="this.classList.toggle('hover')">
-            {/* <div className="container" onClick={this.handleVenueClick}> */}
-              {/* <div className="front" >
-                <div className="inner" > */}
-                <div className="reservation">
-                  <Link to={`venues/${this.props.venueId}`} onClick={this.handleShowVenue}><h3>{this.props.venue.title}</h3></Link>
-                  <h4>{this.props.venue.city}, {this.props.venue.state}</h4>
-                  <p>Favorited on {spelledOutDate}</p>
-                  <Button className='button' onClick={this.handleFavoriteDelete}>Delete</Button>
-                </div>
-                </div>
-        //   </div>
-        // </div>
+      <div className="col" ontouchstart="this.classList.toggle('hover')">
+        <div className="reservation">
+          <Link to={`venues/${this.props.venueId}`} onClick={this.handleShowVenue}><h3>{this.props.venue.title}</h3></Link>
+          <h4>{this.props.venue.city}, {this.props.venue.state}</h4>
+          <p>Favorited on {spelledOutDate}</p>
+          <Button className='button' onClick={this.handleFavoriteDelete}>Delete</Button>
+        </div>
+      </div>
     )
   }
 }
