@@ -14,22 +14,14 @@ class Dropdown extends React.Component {
       categories: [],
       removeSelected: true,
       disabled: false,
-      crazy: false,
       stayOpen: false,
       value: [],
-      rtl: false,
+      // rtl: false,
     }
   }
 
-  // handleSelectChange(value) {
-  //   console.log('You\'ve selected:', value);
-  //   this.setState({ value });
-  // }
-
   handleDropdownChange(value) {
-    //need to get the state of the current search parameter - use regex to find two capital letters ^[A-Z]{2}$
     console.log('Selected: ', value);
-    //dispatch an action that will set the state to whatever is the val.value is
     this.setState({
       categories: value
     }, () => {
@@ -57,11 +49,6 @@ class Dropdown extends React.Component {
       { value: 'bookstore', label: 'Bookstore'},
     ];
 
-    // const test = crazy ? WHY_WOULD_YOU : options;
-    //
-    // const WHY_WOULD_YOU = [
-    // 	{ label: 'Chocolate (are you crazy?)', value: 'chocolate', disabled: true },
-    // ].concat(options.slice(1));
 
     return (
       <div className="category-selector">
@@ -72,12 +59,10 @@ class Dropdown extends React.Component {
           options={options}
           onChange={this.handleDropdownChange}
           multi={true}
-          // joinValues
           closeOnSelect={!stayOpen}
           disabled={disabled}
-          // onChange={this.handleSelectChange}
           removeSelected={this.state.removeSelected}
-          rtl={this.state.rtl}
+          // rtl={this.state.rtl}
           simpleValue
         />
       </div>

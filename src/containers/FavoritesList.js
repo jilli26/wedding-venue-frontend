@@ -14,7 +14,7 @@ class FavoritesList extends React.Component {
         <h2>Your Favorites</h2>
         <div className="wrapper">
           <div className="cols">
-            {favList}
+            {favList[0] ? favList : <p><i>Go ahead, browse venues and favorite them! They'll appear here.</i></p> }
           </div>
         </div>
       </div>

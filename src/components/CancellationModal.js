@@ -9,15 +9,11 @@ class CancellationModal extends Component {
 
   render() {
     const { open, size } = this.state
-    // debugger
     return (
       <div>
         <center>
 
         <Button onClick={this.show('tiny')}>Cancel</Button>
-        {/* <Button onClick={this.show('small')}>Cancel</Button> */}
-        {/* <Button onClick={this.show('large')}>Large</Button> */}
-        {/* <Button onClick={this.show('fullscreen')}>Fullscreen</Button> */}
         </center>
         <Modal size={size} open={open} onClose={this.close}>
           <Modal.Header>

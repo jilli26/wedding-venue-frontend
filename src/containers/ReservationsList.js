@@ -15,7 +15,7 @@ class ReservationsList extends React.Component {
       <h2>Your Reservations</h2><br/>
       <div className="wrapper">
         <div className="cols">
-        {reservationList}
+        {reservationList[0] ? reservationList : <p><i>Time to make your first booking!</i></p>}
       </div>
     </div>
     </div>

@@ -14,29 +14,21 @@ class CapacitySelector extends React.Component {
       capacity: [],
       removeSelected: true,
       disabled: false,
-      crazy: false,
       stayOpen: false,
       value: [],
-      rtl: false,
+      // rtl: false,
     }
   }
 
-  // handleSelectChange(value) {
-  //   console.log('You\'ve selected:', value);
-  //   this.setState({ value });
-  // }
 
   handleSelectChange(value) {
-    //need to get the state of the current search parameter - use regex to find two capital letters ^[A-Z]{2}$
     console.log('Selected: ', value);
-    //dispatch an action that will set the state to whatever is the val.value is
     this.setState({
       capacity: value
     }, () => {
       var capacity = this.state.capacity
       var location = this.props.location
 
-      // console.log(e.value)
       this.props.selectCapacity(capacity, location)
     })
   }
@@ -52,10 +44,6 @@ class CapacitySelector extends React.Component {
       { value: '300-600', label: '300-600'},
     ];
 
-    // const test = crazy ? WHY_WOULD_YOU : options;
-    // const WHY_WOULD_YOU = [
-    // 	{ label: 'Chocolate (are you crazy?)', value: 'chocolate', disabled: true },
-    // ].concat(options.slice(1));
 
     return (
       <div className="capacity-selector">
@@ -66,12 +54,10 @@ class CapacitySelector extends React.Component {
           options={options}
           onChange={this.handleSelectChange}
           multi={true}
-          // joinValues
           closeOnSelect={!stayOpen}
           disabled={disabled}
-          // onChange={this.handleSelectChange}
           removeSelected={this.state.removeSelected}
-          rtl={this.state.rtl}
+          // rtl={this.state.rtl}
           simpleValue
         />
       </div>

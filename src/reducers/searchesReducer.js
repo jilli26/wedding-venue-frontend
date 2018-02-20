@@ -10,12 +10,11 @@ export default function searchesReducer(state = {latlng: '', stateLocation: '', 
 
     case "ADD_LOCATION":
 
-    let test
-    let str = action.payload
+    let location
     let regexp = /\b[A-Z]{2}\b/;
-    regexp.test(str) ? test = (str.match(regexp)) : test = str
+    regexp.test(action.payload) ? location = (action.payload.match(regexp)) : location = action.payload
 
-      return {...state, stateLocation: test, showMap: state.showMap, selectedVenues: state.selectedVenues, selectedCapacities: state.selectedCapacities, finalSelection: state.finalSelection}
+      return {...state, stateLocation: location, showMap: state.showMap, selectedVenues: state.selectedVenues, selectedCapacities: state.selectedCapacities, finalSelection: state.finalSelection}
 
     case "TOGGLE_SHOW_MAP":
       return {...state, showMap: action.payload, selectedVenues: state.selectedVenues, selectedCapacities: state.selectedCapacities, finalSelection: state.finalSelection}
@@ -24,8 +23,8 @@ export default function searchesReducer(state = {latlng: '', stateLocation: '', 
       console.log(action.payload.selected_venues);
 
     function findSelectedVenues() {
-      var selectedVenues = action.payload.selected_venues // categories => []
-      var selectedCapacities = state.selectedCapacities // capacities =>
+      var selectedVenues = action.payload.selected_venues
+      var selectedCapacities = state.selectedCapacities
       let match
       if (selectedCapacities.length === 0 || selectedCapacities === null || selectedCapacities === undefined) {
         match = selectedVenues
@@ -48,13 +47,10 @@ export default function searchesReducer(state = {latlng: '', stateLocation: '', 
 
     return {...state, selectedVenues: action.payload.selected_venues, finalSelection: finalSelected}
 
-      // return {...state, selectedVenues: action.payload.selected_venues}
-
     case "SELECT_CAPACITY":
       console.log(action.payload.venues_with_selected_capacity);
 
       function findSelectedCapacities() {
-        // var unique = {}
         var selectedVenues = state.selectedVenues
         var selectedCapacities = action.payload.venues_with_selected_capacity
         let match

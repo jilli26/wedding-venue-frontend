@@ -10,8 +10,6 @@ import '../styles/venue.css'
 import { Button } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 import BookingConfirmation from '../components/BookingConfirmation'
-
-
 import _ from 'lodash'
 
 import { Grid, Header, Image, Rail, Segment, Sticky } from 'semantic-ui-react'
